@@ -15,7 +15,6 @@ function University() {
     const onSearch = (name) => {
         dispatch(getData(name));
     };
-    const [loading, setloading] = useState(false)
 
     const columns = [
         {
@@ -38,9 +37,7 @@ function University() {
     return (
         <>
             <Search placeholder="Seacrh..." onSearch={onSearch} enterButton style={{ width: 300, marginLeft: 700, marginBlock: 40 }} />
-            {
-                loading ? <h1>Loading...</h1> : <Table columns={columns} dataSource={university.data} style={{ paddingLeft: 50, paddingRight: 50 }} key={university.id} />
-            }
+            <Table columns={columns} dataSource={university.data} style={{ paddingLeft: 50, paddingRight: 50 }} key={university.id} />
         </>
     )
 }
